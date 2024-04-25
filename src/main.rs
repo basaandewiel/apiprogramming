@@ -1,9 +1,9 @@
-// how to get JSON objects using the reqwest HTTP client library
+// This repo demonstrates how to get JSON data from an HTTP API
+// using the reqwest HTTP client library
 // on known and unknown JSON structures and deserialize the results
 
-// rust reqwest get json
-use reqwest;
-use serde_json;
+use reqwest; // HTTP client library
+use serde_json; // JSON library
 use std::collections::HashMap;
 
 // transform our main function into an asynchronous function.
@@ -72,7 +72,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         println!("");
         println!("response_value= {:?}", response_value);
         //let response_json: serde_json::Value = serde_json::from_str(response_value);
-        println!("Electricity cost of {}", response_value["data"]["datum"]);
         println!("Electricity cost of {}", response_value["data"][0]["datum"]);
         println!("Tibber: {}", response_value["data"][0]["prijsTI"]);
 
