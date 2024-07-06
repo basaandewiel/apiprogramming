@@ -74,7 +74,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         println!("");
         println!("response_value= {:?}", response_value);
         //let response_json: serde_json::Value = serde_json::from_str(response_value);
-        println!("Electricity cost of {}", response_value["data"][0]["datum"]);
+        //via pretty print json 
+        // data	
+//0	
+//  datum	"2024-07-03 00:00:00"
+//  prijs	"0.167250"
+//  prijsAA	"0.355223"
+//  ..
+//  prijsTI	"0.355803"
+        println!("Electricity cost of {}", response_value["data"][0]["datum"]); 
         println!("Tibber: {}", response_value["data"][0]["prijsTI"]);
 
         // Print electricity tariffs 
